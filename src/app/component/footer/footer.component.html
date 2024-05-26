@@ -1,0 +1,65 @@
+<!-- contact -->
+<form  class="row search" [formGroup]="contactForm" (ngSubmit)="sendMassage()">
+    <div class="header ">
+        <h2 class="text-danger">ContacUs...</h2>
+    </div>
+
+    <div class="col-md-6 ">
+        <div>
+            <div class="form-group">
+                <input type="text" class="form-control " formControlName='name'  placeholder="Enter Your Name">
+            </div>
+            <div class="text-danger" *ngIf="contactForm.controls.name.invalid&&contactForm.controls.name.touched">
+                Invalid Must Start WIth Capital Letter
+            </div>
+            <div class="form-group">
+                <input type="text" maxlength="11" class="form-control" formControlName='phone' placeholder="Enter Phone">
+            </div>
+            <div class="text-danger" *ngIf="contactForm.controls.phone.invalid&&contactForm.controls.phone.touched">
+                Invalid Include 11 Number
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" formControlName='password' placeholder="Enter Pass">
+            </div>
+            <div class="text-danger" *ngIf="contactForm.controls.password.invalid&&contactForm.controls.password.touched">
+                Invalid
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="col-md-6 ">
+        <div>
+            <div class="form-group">
+                <input type="email" class="form-control" formControlName='email' placeholder="Enter E-Mail">
+            </div>
+            <div class="text-danger" *ngIf="contactForm.controls.email.invalid&&contactForm.controls.email.touched">
+                Invalid Example@gmail.com
+            </div>
+
+            <div class="form-group">
+                <input type="text"  class="form-control " formControlName='age' placeholder="Enter Age">
+            </div>
+            <div class="text-danger" *ngIf="contactForm.controls.age.invalid&&contactForm.controls.age.touched">
+                Invalid Bigger Than 18
+            </div>
+
+            <div class="form-group">
+                <input type="password" (keyup)='checkPassword()'  class="form-control" formControlName='rePassword' placeholder="Enter RePass">
+            </div>
+            <div class="text-danger" *ngIf="contactForm.controls.rePassword.invalid&&contactForm.controls.rePassword.touched">
+                Invalid 
+            </div>
+            <div class="text-danger" *ngIf="this.invalidPassword&&contactForm.controls.rePassword.touched">
+                 The Password isn't Matched
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col">
+        <button  class=" my-3 btn btn-outline-danger w-25 float-left " [disabled]="contactForm.invalid || invalidPassword" >Submit</button>
+    </div>
+
+</form>

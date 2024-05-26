@@ -1,0 +1,67 @@
+@import '../../../styles.scss';
+
+.sidebar
+{
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    width: 20%;
+    background-color: $bgColor;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-around;
+    animation-name: 'test';
+    transition:all 1s ;
+    z-index: 2;
+    // nav data
+    .data
+    {
+        height: 100%;
+        display:flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 90%;
+        overflow: hidden;
+        .nav-link{
+            color: #fff;
+            &:hover{
+                color:red ;
+            }
+        }
+        .copy{
+            font-size: .9em;
+            color: #fff;
+        }
+        
+    }
+
+    // nav Flag
+    .flag
+    {
+        width:20%;
+        height: 100%;
+        background-color: $lightColor;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+
+}
+
+@for $time from 0 to 7 {
+    .popupAnchor :nth-child(#{$time}){
+        transition:all .3*$time + s;
+        transform: translateY(0%);
+        transition-timing-function: ease-in-out;
+    }
+
+    .dropAnchor :nth-child(#{$time}){
+        transition:all .3s;
+        transform: translateY(335%);
+        transition-timing-function: ease-in-out;
+    }
+}
+
+

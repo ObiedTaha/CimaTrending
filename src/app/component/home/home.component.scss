@@ -1,0 +1,49 @@
+@import '../../../styles.scss';
+.search{
+    .searchField {
+        input{
+            background-color: transparent;
+            border-color: transparent;
+            color: white;
+            &:focus{
+                box-shadow: none !important;
+            }
+        }
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 10px;
+            height: 1px;
+            width: 80%;
+            background-color:rgb(209, 202, 202) ;
+        }   
+    }
+}
+.img-container{
+    position: relative;
+    // background-color: blue;
+    overflow: hidden;
+    
+
+    &:hover .caption{
+        top: 0;
+        width: 100%;
+    }
+
+    .caption {
+        position: absolute;
+        background-color: #f8f6f693;
+        transition:all 1s;
+        text-align: center; 
+        height: 100%;
+        width: 100%;
+        top:100%;
+        &*{
+            padding:10px 0;
+        }
+        
+    }
+    
+}

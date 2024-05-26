@@ -1,0 +1,29 @@
+<!-- search -->
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#fff" type="square-jelly-box" [fullScreen]="true">
+    <p style="color: white"> Cima Trending </p>
+</ngx-spinner>
+
+<div class="row search">
+    <div class="col-md-6 searchField">
+        <input [(ngModel)]='listSearch' type="text" class="form-control" placeholder="Get Movie By Word....">
+    </div>
+    <div class="col-md-6 searchField">
+        <input (keyup)='apiSearch($event)' type="text" class="form-control" placeholder="Search">
+    </div>
+</div>
+<!-- componend -->
+
+<div class="row my-5 home">
+    <div class="col-lg-3 col-md-6 mb-3 " *ngFor="let movie of movies|realTimeSearch:listSearch">
+        <div class="img-container">
+            <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" class="img-thumbnail">
+            <div class="caption p-2 d-flex justify-content-center flex-column">
+                <h3>{{movie.name}} {{movie.title}}</h3>
+                <p>{{movie.overview}}</p>
+                <div>rate: <span>{{movie.vote_average}}</span></div>
+                <div>{{movie.first_air_date}} {{movie.release_date}}</div>
+            </div>
+        </div>
+    </div>
+
+</div>

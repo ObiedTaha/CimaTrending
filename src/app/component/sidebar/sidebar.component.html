@@ -1,0 +1,47 @@
+<nav class="sidebar"  [style.width]='widthStyle' [ngStyle]="style" >
+
+  <div class="data py-4">
+    <ul class="navbar-nav ms-4  overflow-hidden  mb-lg-0" [ngClass]="!toggle ? 'popupAnchor':'dropAnchor'">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" routerLink="home">Now Playing</a>
+      </li>
+      <li class="nav-item py-1">
+        <a class="nav-link" >Popular</a>
+      </li>
+      <li class="nav-item py-1">
+        <a class="nav-link" routerLink="home/{{'topRate'}}">Top Rated</a>
+      </li>
+      <li class="nav-item py-1">
+        <a class="nav-link" routerLink="home/{{'trending'}}">Trending</a>
+      </li>
+      <li class="nav-item py-1">
+        <a class="nav-link" routerLink="home/{{'upComing'}}">Upcoming</a>
+      </li>
+      <li class="nav-item py-1">
+        <a class="nav-link" >Contact Us</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ms-4 mb-2 mb-lg-0">
+      <li class="nav-item  ">
+        <i class=" fab fa-facebook-f nav-link"></i>
+        <i class="ms-3 fab fa-twitter nav-link"></i>
+        <i class="ms-3 fas fa-globe nav-link"></i>
+      </li>
+      <li class="nav-item my-3 copy">
+        Copyright Â© 2019 All Rights Reserved.
+      </li>
+    </ul>
+  </div>
+
+  <div class="flag bg-light py-4">
+    <span class=" w-50"><img src="../../../assets/image/logo.png" class="w-100"> </span>
+    <span role="button" (click)="fadeToggle()"> <i [ngClass]="icon"></i></span>
+    <span class=" d-flex flex-column">
+      <i class="fas fa-globe mb-3 fa-sm"></i>
+      <i class="fas fa-share-alt fa-sm"></i>
+    </span>
+
+  </div>
+
+</nav>
